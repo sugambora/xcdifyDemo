@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, Button} from 'react-native';
+import {StyleSheet, View, Button} from 'react-native';
+
+import CustomText from './CustomText';
 
 let interval;
 
@@ -31,20 +33,21 @@ const StopWatch = props => {
   return (
     <View style={localStyles.mainContainer}>
       <View style={{alignSelf: 'center', marginVertical: 10}}>
-        <Text>
+        <CustomText>
+          {' '}
           Total Duration: {totalMins} {totalMins == 1 ? 'Minute' : 'Minutes'}{' '}
           {totalSecs} {totalSecs == 1 ? 'Second' : 'Seconds'}
-        </Text>
+        </CustomText>
       </View>
 
       <View style={{...localStyles.row, justifyContent: 'center'}}>
-        <Text>
+        <CustomText>
           {mins} {mins == 1 ? 'Minute' : 'Minutes'}
-        </Text>
-        <Text style={{marginHorizontal: 10}}>:</Text>
-        <Text>
+        </CustomText>
+        <CustomText style={{marginHorizontal: 10}}>:</CustomText>
+        <CustomText>
           {secs} {secs == 1 ? 'Second' : 'Seconds'}
-        </Text>
+        </CustomText>
       </View>
 
       <View style={{...localStyles.row, justifyContent: 'space-evenly'}}>
